@@ -1,0 +1,13 @@
+version: '3'
+
+# เอาไว้ commande ของ docker ระบุกรณีมีหลายๆ services เช่น django-compose run app sh -c "django-admin.py startproject app ." คือใช้ services app เพื่อสร้าง dev project
+services:
+  app:
+    build:
+      context: .
+    ports:
+      - '8000:8000' # map host กับ server
+    volumes:
+      - ./app:/app
+    command: >
+      sh -c "python manage.py runserver 0.0.0.0:8000"
