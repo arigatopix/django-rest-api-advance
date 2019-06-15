@@ -25,6 +25,7 @@ class UserManager(BaseUserManager):
 
         email = self.normalize_email(email)
         """ 
+        ทำให้ domain part เป็นตัวเล็ก
         เนื่องจากปกติ email ส่วนมากเป็น case insensitive
         แปลง email ที่ input เข้ามาเป็นตัวพิมพ์เล็กทั้งหมด 
         เวลา save ใน db จะได้ระบุว่า user ซ้ำหรือไม่
