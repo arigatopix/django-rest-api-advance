@@ -15,6 +15,7 @@ class UserAdmin(BaseUserAdmin):
 
     # Set fieldsets to control the layout of admin “add” and “change” pages.
     # https://docs.djangoproject.com/en/2.1/ref/contrib/admin/#django.contrib.admin.ModelAdmin.fieldsets
+    # เป็นหน้าจอของ admin คลิกที่ user แต่ละอัน สามารถเพิ่ม field เพื่อดูข้อมูลเพิ่มเติมได้
     fieldsets = (
         (None, {'fields': ('email', 'password')}),
         (_('Personal Info'), {'fields': ('name',)}),

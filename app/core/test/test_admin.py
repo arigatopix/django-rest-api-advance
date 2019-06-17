@@ -37,7 +37,7 @@ class AdminSiteTests(TestCase):
         self.assertContains(response, self.user.email)
 
     def test_user_change_page(self):
-        """ test that the user edit page work """
+        """ test that the user edit page work หน้า admin edit user"""
         url = reverse('admin:core_user_change', args=[self.user.id])
         """ admin/core/user/id กรณีเปลี่ยนหน้า login ?? """
         """ https://docs.djangoproject.com/en/2.1/ref/contrib/admin/#django.contrib.admin.ModelAdmin.fieldsets """
@@ -49,6 +49,8 @@ class AdminSiteTests(TestCase):
 
     def test_create_user_page(self):
         """ Test that create user page work """
+
+        """ เช็ค function admin หน้าเพิ่ม user """
         url = reverse('admin:core_user_add')
         response = self.client.get(url)
 
